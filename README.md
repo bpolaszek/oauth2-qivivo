@@ -38,10 +38,6 @@ For further usage of this package please refer to the [core package documentatio
 $ ./vendor/bin/phpunit
 ```
 
-## Contributing
-
-Please see [CONTRIBUTING](https://github.com/bpolaszek/oauth2-qivivo/blob/master/CONTRIBUTING.md) for details.
-
 
 ## Credits
 

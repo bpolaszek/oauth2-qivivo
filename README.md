@@ -5,7 +5,7 @@
 [![Build Status](https://img.shields.io/travis/bpolaszek/oauth2-qivivo/master.svg?style=flat-square)](https://travis-ci.org/bpolaszek/oauth2-qivivo)
 [![Coverage Status](https://img.shields.io/scrutinizer/coverage/g/bpolaszek/oauth2-qivivo.svg?style=flat-square)](https://scrutinizer-ci.com/g/bpolaszek/oauth2-qivivo/code-structure)
 [![Quality Score](https://img.shields.io/scrutinizer/g/bpolaszek/oauth2-qivivo.svg?style=flat-square)](https://scrutinizer-ci.com/g/bpolaszek/oauth2-qivivo)
-[![Total Downloads](https://img.shields.io/packagist/dt/bpolaszek/oauth2-qivivo.svg?style=flat-square)](https://packagist.org/packages/bentools/oauth2-qivivo)
+[![Total Downloads](https://img.shields.io/packagist/dt/bentools/oauth2-qivivo.svg?style=flat-square)](https://packagist.org/packages/bentools/oauth2-qivivo)
 
 This package provides Qivivo OAuth 2.0 support for the PHP League's [OAuth 2.0 Client](https://github.com/thephpleague/oauth2-client).
 

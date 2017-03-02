@@ -56,11 +56,11 @@ class QivivoTest extends \PHPUnit_Framework_TestCase
 
     public function testScopes()
     {
-        $options = ['scope' => [uniqid(),uniqid()]];
+        $options = ['scope' => [Qivivo::SCOPE_READ_THERMOSTATS, Qivivo::SCOPE_READ_DEVICES]];
 
         $url = $this->provider->getAuthorizationUrl($options);
 
-        $this->assertContains(urlencode(implode(' ', $options['scope'])), $url);
+        $this->assertContains(rawurlencode(implode(' ', $options['scope'])), $url);
     }
 
     public function testGetAuthorizationUrl()
@@ -68,8 +68,8 @@ class QivivoTest extends \PHPUnit_Framework_TestCase
         $url = $this->provider->getAuthorizationUrl();
         $uri = parse_url($url);
 
-        $this->assertEquals('data.qivivo.com', $uri['host']);
-        $this->assertEquals('/oauth/authorize', $uri['path']);
+        $this->assertEquals('account.qivivo.com', $uri['host']);
+        $this->assertArrayNotHasKey('path', $uri);
     }
 
     public function testGetBaseAccessTokenUrl()
@@ -79,7 +79,7 @@ class QivivoTest extends \PHPUnit_Framework_TestCase
         $url = $this->provider->getBaseAccessTokenUrl($params);
         $uri = parse_url($url);
 
-        $this->assertEquals('data.qivivo.com', $uri['host']);
+        $this->assertEquals('account.qivivo.com', $uri['host']);
         $this->assertEquals('/oauth/token', $uri['path']);
     }
 

@@ -10,6 +10,16 @@ use Psr\Http\Message\ResponseInterface;
 
 class Qivivo extends AbstractProvider
 {
+
+    const SCOPE_USER_BASIC_INFORMATION = 'user_basic_information';
+    const SCOPE_READ_DEVICES = 'read_devices';
+    const SCOPE_READ_THERMOSTATS = 'read_thermostats';
+    const SCOPE_READ_WIRELESS_MODULES = 'read_wireless_modules';
+    const SCOPE_READ_PROGRAMMATION = 'read_programmation';
+    const SCOPE_UPDATE_PROGRAMMATION = 'update_programmation';
+    const SCOPE_READ_HOUSE_DATA = 'read_house_data';
+    const SCOPE_UPDATE_HOUSE_SETTINGS = 'update_house_settings';
+
     use BearerAuthorizationTrait;
 
     /**
@@ -19,7 +29,7 @@ class Qivivo extends AbstractProvider
      */
     public function getBaseAuthorizationUrl()
     {
-        return 'https://data.qivivo.com/oauth/authorize';
+        return 'https://account.qivivo.com';
     }
 
     /**
@@ -29,7 +39,7 @@ class Qivivo extends AbstractProvider
      */
     public function getBaseAccessTokenUrl(array $params)
     {
-        return 'https://data.qivivo.com/oauth/token';
+        return 'https://account.qivivo.com/oauth/token';
     }
 
     /**
@@ -56,7 +66,10 @@ class Qivivo extends AbstractProvider
      */
     protected function getDefaultScopes()
     {
-        return [];
+        return [
+            self::SCOPE_READ_DEVICES,
+            self::SCOPE_READ_THERMOSTATS,
+        ];
     }
 
     /**
